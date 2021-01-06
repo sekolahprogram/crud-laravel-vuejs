@@ -21,15 +21,24 @@
         <div class="field">
             <label for="name" class="label">Nama Lengkap</label>
             <div class="control">
-                <input v-model="form.name" type="text" name="name" id="name" class="input" required>
+                <input v-model="form.name" type="text" name="name" id="name" 
+                    :class="['input', {
+                        'is-danger': errors.name
+                    }]"
+                >
             </div>
+            <p v-if="errors.name" class="help is-danger">{{errors.name[0]}}</p>
         </div>
-        
         <div class="field">
             <label for="email" class="label">Alamat E-Mail</label>
             <div class="control">
-                <input v-model="form.email" type="email" name="email" id="email" class="input" required>
+                <input v-model="form.email" type="email" name="email" id="email" 
+                    :class="['input', {
+                        'is-danger': errors.email
+                    }]"
+                >
             </div>
+            <p v-if="errors.email" class="help is-danger">{{errors.email[0]}}</p>
         </div>
         <div class="field">
             <label class="checkbox">
@@ -39,14 +48,24 @@
         <div v-if="changePassword" class="field">
             <label for="password" class="label">Kata Sandi</label>
             <div class="control">
-                <input v-model="form.password" type="password" name="password" id="password" class="input" required>
+                <input v-model="form.password" type="password" name="password" id="password" required
+                    :class="['input', {
+                        'is-danger': errors.password
+                    }]"
+                >
             </div>
+            <p v-if="errors.password" class="help is-danger">{{errors.password[0]}}</p>
         </div>
         <div v-if="changePassword" class="field">
             <label for="password_confirmation" class="label">Konfigurasi Kata Sandi</label>
             <div class="control">
-                <input v-model="form.password_confirmation" type="password" name="password_confirmation" id="password_confirmation" class="input" required>
+                <input v-model="form.password_confirmation" type="password" name="password_confirmation" id="password_confirmation" required
+                    :class="['input', {
+                        'is-danger': errors.password_confirmation
+                    }]"
+                >
             </div>
+            <p v-if="errors.password_confirmation" class="help is-danger">{{errors.password_confirmation[0]}}</p>
         </div>
 
         <div class="field">
@@ -66,12 +85,15 @@ export default {
                 email: '',
                 password: '',
                 password_confirmation: ''
-            }
+            },
+            errors: {}
         }
     },
 
     methods: {
         submit() {
+            this.errors = {}
+            
             axios.put(`/api/users/${this.id}`, this.form).then(({ data }) => {
                 this.$router.push({
                     name: 'users.show',
@@ -79,6 +101,9 @@ export default {
                         id: data.id
                     }
                 })
+            })
+            .catch(({ response }) => {
+                this.errors = response.data.errors
             })
         }
     },

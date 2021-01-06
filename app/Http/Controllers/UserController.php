@@ -27,6 +27,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|min:6'
+        ]);
+
         $user = User::create(
             $request->all()
         );
@@ -56,6 +63,22 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = [
+            'name' => 'required',
+            'email' => 'required|unique:users,email,' . $id
+        ];
+
+        if (is_null($request->password)) {
+            $request->replace($request->except(['password']));
+        } else {
+            $data += [
+                'password' => 'required|min:6|confirmed',
+                'password_confirmation' => 'required|min:6'
+            ];
+        }
+        
+        $request->validate($data);
+
         $user = User::find($id);
         $user->update(
             $request->all()

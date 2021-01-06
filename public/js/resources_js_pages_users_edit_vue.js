@@ -21,13 +21,15 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: '',
         password_confirmation: ''
-      }
+      },
+      errors: {}
     };
   },
   methods: {
     submit: function submit() {
       var _this = this;
 
+      this.errors = {};
       axios.put("/api/users/".concat(this.id), this.form).then(function (_ref) {
         var data = _ref.data;
 
@@ -37,14 +39,17 @@ __webpack_require__.r(__webpack_exports__);
             id: data.id
           }
         });
+      })["catch"](function (_ref2) {
+        var response = _ref2.response;
+        _this.errors = response.data.errors;
       });
     }
   },
   mounted: function mounted() {
     var _this2 = this;
 
-    axios.get("/api/users/".concat(this.id)).then(function (_ref2) {
-      var data = _ref2.data;
+    axios.get("/api/users/".concat(this.id)).then(function (_ref3) {
+      var data = _ref3.data;
       _this2.form = data;
     });
   }
@@ -63,12 +68,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_submit_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","submit":"options"} */ "./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"submit\":\"options\"}");
+/* harmony import */ var _edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_errors_data_submit_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","errors":"data","submit":"options"} */ "./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"errors\":\"data\",\"submit\":\"options\"}");
 /* harmony import */ var _edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit.vue?vue&type=script&lang=js */ "./resources/js/pages/users/edit.vue?vue&type=script&lang=js");
 
 
 
-_edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_submit_options___WEBPACK_IMPORTED_MODULE_0__.render
+_edit_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_errors_data_submit_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* hot reload */
 if (false) {}
 
@@ -94,26 +99,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"submit\":\"options\"}":
-/*!*********************************************************************************************************************************************************!*\
-  !*** ./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","submit":"options"} ***!
-  \*********************************************************************************************************************************************************/
+/***/ "./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"errors\":\"data\",\"submit\":\"options\"}":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","errors":"data","submit":"options"} ***!
+  \*************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_submit_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_errors_data_submit_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_submit_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","submit":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"submit\":\"options\"}");
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_edit_vue_vue_type_template_id_6f097b5a_bindings_id_data_changePassword_data_form_data_errors_data_submit_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","errors":"data","submit":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"errors\":\"data\",\"submit\":\"options\"}");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"submit\":\"options\"}":
-/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","submit":"options"} ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={\"id\":\"data\",\"changePassword\":\"data\",\"form\":\"data\",\"errors\":\"data\",\"submit\":\"options\"}":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/users/edit.vue?vue&type=template&id=6f097b5a&bindings={"id":"data","changePassword":"data","form":"data","errors":"data","submit":"options"} ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -142,34 +147,50 @@ const _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode
   class: "label"
 }, "Nama Lengkap", -1 /* HOISTED */)
 const _hoisted_11 = { class: "control" }
-const _hoisted_12 = { class: "field" }
-const _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+const _hoisted_12 = {
+  key: 0,
+  class: "help is-danger"
+}
+const _hoisted_13 = { class: "field" }
+const _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   for: "email",
   class: "label"
 }, "Alamat E-Mail", -1 /* HOISTED */)
-const _hoisted_14 = { class: "control" }
-const _hoisted_15 = { class: "field" }
-const _hoisted_16 = { class: "checkbox" }
-const _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Ganti kata sandi lama ")
-const _hoisted_18 = {
+const _hoisted_15 = { class: "control" }
+const _hoisted_16 = {
+  key: 0,
+  class: "help is-danger"
+}
+const _hoisted_17 = { class: "field" }
+const _hoisted_18 = { class: "checkbox" }
+const _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Ganti kata sandi lama ")
+const _hoisted_20 = {
   key: 0,
   class: "field"
 }
-const _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+const _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   for: "password",
   class: "label"
 }, "Kata Sandi", -1 /* HOISTED */)
-const _hoisted_20 = { class: "control" }
-const _hoisted_21 = {
+const _hoisted_22 = { class: "control" }
+const _hoisted_23 = {
+  key: 0,
+  class: "help is-danger"
+}
+const _hoisted_24 = {
   key: 1,
   class: "field"
 }
-const _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+const _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   for: "password_confirmation",
   class: "label"
 }, "Konfigurasi Kata Sandi", -1 /* HOISTED */)
-const _hoisted_23 = { class: "control" }
-const _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "field" }, [
+const _hoisted_26 = { class: "control" }
+const _hoisted_27 = {
+  key: 0,
+  class: "help is-danger"
+}
+const _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "field" }, [
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", { class: "button is-fullwidth is-primary" }, "Perbarui")
 ], -1 /* HOISTED */)
 
@@ -217,74 +238,92 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             type: "text",
             name: "name",
             id: "name",
-            class: "input",
-            required: ""
-          }, null, 512 /* NEED_PATCH */), [
+            class: ['input', {
+                        'is-danger': $data.errors.name
+                    }]
+          }, null, 2 /* CLASS */), [
             [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.name]
           ])
-        ])
+        ]),
+        ($data.errors.name)
+          ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.name[0]), 1 /* TEXT */))
+          : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
       ]),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_12, [
-        _hoisted_13,
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_14, [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_13, [
+        _hoisted_14,
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [
           (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
             "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($data.form.email = $event)),
             type: "email",
             name: "email",
             id: "email",
-            class: "input",
-            required: ""
-          }, null, 512 /* NEED_PATCH */), [
+            class: ['input', {
+                        'is-danger': $data.errors.email
+                    }]
+          }, null, 2 /* CLASS */), [
             [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.email]
           ])
-        ])
+        ]),
+        ($data.errors.email)
+          ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.email[0]), 1 /* TEXT */))
+          : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
       ]),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_15, [
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", _hoisted_16, [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_17, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", _hoisted_18, [
           (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
             "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => ($data.changePassword = $event)),
             type: "checkbox"
           }, null, 512 /* NEED_PATCH */), [
             [vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $data.changePassword]
           ]),
-          _hoisted_17
+          _hoisted_19
         ])
       ]),
       ($data.changePassword)
-        ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_18, [
-            _hoisted_19,
-            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_20, [
+        ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_20, [
+            _hoisted_21,
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_22, [
               (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
                 "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => ($data.form.password = $event)),
                 type: "password",
                 name: "password",
                 id: "password",
-                class: "input",
-                required: ""
-              }, null, 512 /* NEED_PATCH */), [
+                required: "",
+                class: ['input', {
+                        'is-danger': $data.errors.password
+                    }]
+              }, null, 2 /* CLASS */), [
                 [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.password]
               ])
-            ])
+            ]),
+            ($data.errors.password)
+              ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.password[0]), 1 /* TEXT */))
+              : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
           ]))
         : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),
       ($data.changePassword)
-        ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_21, [
-            _hoisted_22,
-            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_23, [
+        ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_24, [
+            _hoisted_25,
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_26, [
               (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
                 "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => ($data.form.password_confirmation = $event)),
                 type: "password",
                 name: "password_confirmation",
                 id: "password_confirmation",
-                class: "input",
-                required: ""
-              }, null, 512 /* NEED_PATCH */), [
+                required: "",
+                class: ['input', {
+                        'is-danger': $data.errors.password_confirmation
+                    }]
+              }, null, 2 /* CLASS */), [
                 [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.form.password_confirmation]
               ])
-            ])
+            ]),
+            ($data.errors.password_confirmation)
+              ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("p", _hoisted_27, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.errors.password_confirmation[0]), 1 /* TEXT */))
+              : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
           ]))
         : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),
-      _hoisted_24
+      _hoisted_28
     ], 32 /* HYDRATE_EVENTS */)
   ], 64 /* STABLE_FRAGMENT */))
 }
