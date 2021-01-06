@@ -10,7 +10,7 @@ Jangan di lewatkan tutorial yang satu ini atau langsung gunakan projek ini
 - [5. Menampilkan Satu Data Laravel dan Vue.js](https://sekolahprogram.com/febrihidayan/series/menampilkan-satu-data-laravel-dan-vuejs)
 - [6. Mengedit Data Laravel dan Vue.js](https://sekolahprogram.com/febrihidayan/series/mengedit-data-laravel-dan-vuejs)
 - [7. Menghapus Data Laravel dan Vue.js](https://sekolahprogram.com/febrihidayan/series/menghapus-data-laravel-dan-vuejs)
-- [8. Membuat Validasi Laravel dan Vue.js](#)
+- [8. Membuat Validasi Laravel dan Vue.js](https://sekolahprogram.com/febrihidayan/series/membuat-validasi-laravel-dan-vuejs)
 - [9. Live Search Users Laravel dan Vue.js](#)
 - [10. Menambahkan Pagination  Laravel dan Vue.js](#)
 - [11. Membuat Meta Tag Laravel dan Vue.js](#)

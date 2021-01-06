@@ -14,6 +14,12 @@
     
     <hr>
 
+    <div class="field is-grouped-multiline is-grouped">
+        <div class="control">
+            <input v-model="search" type="search" class="input" placeholder="Cari nama pengguna">
+        </div>
+    </div>
+
     <div class="table-container">
         <table class="table is-fullwidth is-hoverable">
             <thead>
@@ -46,12 +52,14 @@
 
 <script>
 import Swal from 'sweetalert2'
+import debounce from 'lodash/debounce'
 
 export default {
 
     data() {
         return {
-            users: []
+            users: [],
+            search: ''
         }
     },
 
@@ -61,7 +69,11 @@ export default {
 
     methods: {
         fetchData() {
-            axios.get('/api/users').then(({ data }) => {
+            axios.get('/api/users', {
+                params: {
+                    search: this.search
+                }
+            }).then(({ data }) => {
                 this.users = data
             })
         },
@@ -90,6 +102,12 @@ export default {
                 }
             })
         }
+    },
+
+    watch: {
+        search: debounce( function() {
+            this.fetchData()
+        }, 500)
     }
 }
 </script>

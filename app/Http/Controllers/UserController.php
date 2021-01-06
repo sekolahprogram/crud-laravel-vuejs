@@ -14,7 +14,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        if (request('search')) {
+            $users = User::where('name', 'like', '%'. request('search') .'%')->get();
+        } else {
+            $users = User::all();
+        }
 
         return response()->json($users);
     }
